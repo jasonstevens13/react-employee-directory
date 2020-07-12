@@ -5,10 +5,17 @@ import Table from "./components/Table";
 function App() {
   return (
     <>
+
+
+
       <Jumbotron />
       <div className="container">
         <Table />
       </div>
+
+
+
+      
     </>
 
   );

@@ -1,23 +1,21 @@
 import React from "react";
 
 function ResultList(props) {
+
     console.log(props.results);
-    console.log(props.result);
+
+
     return (
 
-        <tbody>
-            {
-                props.results.map(result => (
-                    <tr>
-                        <th scope="row" key={result.id}>{result.id}</th>
-                        <td><img alt={result.name.first} className="img-fluid" src={result.picture.thumbnail} /></td>
-                        <td>{result.name.first}</td>
-                        <td>{result.name.last}</td>
-                        <td>{result.email}</td>
-                    </tr>
-                ))
-            }
-        </tbody>
+
+        <tr>
+            <th scope="row" key={props.value}>{props.value}</th>
+            <td><img alt={props.first} className="img-fluid" src={props.thumbnail} /></td>
+            <td>{props.first}</td>
+            <td>{props.last}</td>
+            <td>{props.email}</td>
+        </tr>
+
 
     );
 }
