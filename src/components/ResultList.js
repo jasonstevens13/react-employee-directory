@@ -1,6 +1,8 @@
 import React from "react";
 
 function ResultList(props) {
+    console.log(props.results);
+    console.log(props.result);
     return (
 
         <tbody>
