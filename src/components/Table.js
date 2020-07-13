@@ -15,36 +15,24 @@ class Table extends Component {
     render() {
 
         return (
-            <div>
-                <table className="table table-dark">
-                    <thead>
-                        <tr>
-                            <th scope="col">#</th>
-                            <th scope="col">First</th>
-                            <th scope="col">Last</th>
-                            <th scope="col">Email</th>
-                            <th scope="col">Picture</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <div>
-                            {this.state.results.map(result =>
 
-                                <ResultList
-                                    key={result.value}
-                                    firstName={result.first}
-                                    lastname={result.last}
-                                    email={result.email}
-                                    image={result.thumbnail}
-                                />
-                            )
-                            }
-                        </div>
-                    </tbody>
-                </table >
-            </div>
+            <table className="table">
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Picture</th>
+                        <th scope="col">First</th>
+                        <th scope="col">Last</th>
+                        <th scope="col">Email</th>
+                    </tr>
+                </thead>
+                <ResultList results={this.state.results} />
+            </table>
+
         );
     }
 }
 
 export default Table;
+
+

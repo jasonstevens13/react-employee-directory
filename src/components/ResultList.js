@@ -1,4 +1,5 @@
 import React from "react";
+// import API from "../utils/APImock.json";
 
 function ResultList(props) {
 
@@ -6,21 +7,22 @@ function ResultList(props) {
 
 
     return (
+        <tbody>
+            {props.results.map(result => (
 
+                <tr>
+                    <th scope="row" key={result.value}>{result.value}</th>
+                    <td><img alt={result.first} className="img-fluid" src={result.thumbnail} /></td>
+                    <td>{result.first}</td>
+                    <td>{result.last}</td>
+                    <td>{result.email}</td>
+                </tr>
 
-        <tr>
-            <th scope="row" key={props.value}>{props.value}</th>
-            <td><img alt={props.first} className="img-fluid" src={props.thumbnail} /></td>
-            <td>{props.first}</td>
-            <td>{props.last}</td>
-            <td>{props.email}</td>
-        </tr>
+            ))}
+        </tbody>
 
 
     );
 }
 
 export default ResultList;
-
-
-
