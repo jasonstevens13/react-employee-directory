@@ -1,8 +1,7 @@
 import React from "react";
 import Jumbotron from "./components/Jumbotron";
-// import TableContainer from "./components/TableContainer";
-
 import EmpTable from "./components/Emp-Table";
+import Filter from "./components/Filter";
 import data from "./utils/APImock.json";
 
 class App extends React.Component {
@@ -13,7 +12,8 @@ class App extends React.Component {
       data: data,
       direction: {
         id: 'asc'
-      }
+      },
+      filter: ''
     }
 
     this.sortBy = this.sortBy.bind(this)
@@ -35,18 +35,27 @@ class App extends React.Component {
   }
 
 
+  handleFilter = (e) => {
+    this.setState({ filter: e.target.value.substr(0, 20) })
+  }
 
 
 
   render() {
+
+
     return (
       <>
         <Jumbotron />
+        <Filter
+          handleFilter={this.handleFilter}
+        />
         <div className="container">
 
           <EmpTable
             data={this.state.data}
             sortBy={this.sortBy}
+            handleFilter={this.handleFilter}
           />
 
 

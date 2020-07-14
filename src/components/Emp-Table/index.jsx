@@ -2,6 +2,7 @@ import React from 'react';
 
 export default function EmpTable(props) {
 
+
     return (
 
         <table className="table">
@@ -36,16 +37,7 @@ export default function EmpTable(props) {
         </table>
 
 
-
-
     )
-
-
-
-
-
-
-
 
 
 }
